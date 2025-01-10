@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "senha": "N002",
+    "guiche": 1,
+    "tipo": "normal"
+  },
+  {
+    "id": 2,
+    "senha": "N0012",
+    "guiche": 1,
+    "tipo": "normal"
+  },
+  {
+    "id": 3,
+    "senha": "N0034",
+    "guiche": 1,
+    "tipo": "normal"
+  },
+  {
+    "id": 4,
+    "senha": "N0035",
+    "guiche": 1,
+    "tipo": "normal"
+  }
+]
