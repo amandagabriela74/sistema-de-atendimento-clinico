@@ -14,18 +14,16 @@ export class TicketService {
     }
   }
 
-  static async createTicket(newTicket: {
-    senha: string;
-    guiche: number;
-    tipo: string;
-  }) {
+  static async createTicket(type: string) {
     try {
       const tickets = await FileService.readFile(this.filePath);
 
       const newId =
         tickets.length > 0 ? Math.max(...tickets.map((t: any) => t.id)) + 1 : 1;
 
-      const ticketToAdd = { id: newId, ...newTicket };
+      const newPassword: string = 'Senha'; //MUDAR DEPOIS
+
+      const ticketToAdd = { id: newId, type, password: newPassword };
       tickets.push(ticketToAdd);
 
       await FileService.writeFile(this.filePath, tickets);

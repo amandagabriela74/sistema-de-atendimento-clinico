@@ -14,18 +14,14 @@ export class TicketController {
 
   static async createTicket(req: Request, res: Response): Promise<void> {
     try {
-      const { senha, guiche, tipo } = req.body;
+      const { type } = req.body;
 
-      if (!senha || !guiche || !tipo) {
+      if (!type) {
         res.status(400).json({ error: "Todos os campos são obrigatórios." });
         return;
       }
 
-      const newTicket = await TicketService.createTicket({
-        senha,
-        guiche,
-        tipo,
-      });
+      const newTicket = await TicketService.createTicket(type);
       res.status(201).json(newTicket);
     } catch (error) {
       console.error("Erro no controlador:", error);

@@ -5,8 +5,16 @@
 
 <section>
   <ul>
-    <li> Normal </li>
-    <li> Preferêncial</li>
-    <li> Urgente </li>
+    <li (click)="createTicket('Normal')"> Normal </li>
+    <li (click)="createTicket('Preferêncial')"> Preferêncial</li>
+    <li (click)="createTicket('Urgente')"> Urgente </li>
   </ul>
 </section>
+
+@if (generatedTicket) {
+<div class="ticket-info">
+  <h2>Seu ticket foi gerado:</h2>
+  <p><strong>Senha:</strong> {{ generatedTicket.password }}</p>
+  <p><strong>Tipo:</strong> {{ generatedTicket.type }}</p>
+</div>
+}
