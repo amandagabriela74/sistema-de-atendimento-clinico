@@ -1,10 +1,12 @@
 import express, { Application } from "express";
 import routes from "./routes";
+const cors = require("cors");
 
 const app: Application = express();
 const PORT = 3000;
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 
 // Rotas

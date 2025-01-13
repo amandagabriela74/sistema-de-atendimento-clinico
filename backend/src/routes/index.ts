@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { TicketService } from "../services/TicketService";
+import { TicketController } from "../controllers/TicketController";
 
 const router = Router();
 
@@ -8,13 +8,6 @@ router.get("/", (req, res) => {
 });
 
 // Rota para listar os tickets
-router.get("/tickets", async (req, res) => {
-    try {
-      const tickets = await TicketService.getTickets(); // Método para obter os tickets
-      res.json(tickets); // Retorna os tickets no formato JSON
-    } catch (error) {
-      res.status(500).json({ error: "Erro ao obter os tickets." });
-    }
-  });
+router.get("/tickets", TicketController.getTickets);
 
 export default router;

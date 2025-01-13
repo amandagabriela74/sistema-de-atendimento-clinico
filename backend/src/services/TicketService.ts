@@ -8,9 +8,14 @@ export class TicketService {
     return await FileService.readFile(this.filePath);
   }
 
-  async getAllTickets() {
-    const tickets = await FileService.readFile("src/data/tickets.json");
-    console.log(tickets);
-    return tickets;
+  static async getAllTickets() {
+    try {
+      const tickets = await FileService.readFile("src/data/tickets.json");
+      console.log("Tickets carregados:", tickets);
+      return tickets;
+    } catch (error) {
+      console.error("Erro no serviço:", error);
+      throw new Error("Erro ao carregar os tickets.");
+    }
   }
 }
