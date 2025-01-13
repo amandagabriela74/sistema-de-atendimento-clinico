@@ -1,0 +1,33 @@
+# Ignorar o node_modules em todo o repositório
+node_modules/
+
+# Backend
+/backend/dist/
+backend/logs/
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+backend/coverage/
+
+# Frontend (Angular)
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.angular/cache/
+/frontend/.vscode/
+/frontend/coverage/
+/frontend/npm-debug.log*
+
+# Logs gerais
+*.log
+logs/
+
+# Sistema operacional e editor de texto
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Git
+.git/
+*.orig
