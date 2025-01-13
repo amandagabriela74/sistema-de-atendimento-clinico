@@ -1,3 +1,4 @@
+import { LinkedList } from "../data-structures/LinkedList";
 import { FileService } from "./FileService";
 
 interface Ticket {
@@ -10,13 +11,19 @@ interface Ticket {
 export class TicketService {
   private static filePath = "src/data/tickets.json";
 
-  static async getAllTickets() {
+  
+  static async getAllTickets(): Promise<any[]> {
     try {
       const tickets = await FileService.readFile(this.filePath);
-      console.log("Tickets carregados:", tickets);
-      return tickets;
+      const ticketList = new LinkedList();
+
+      // Adiciona os tickets à lista encadeada
+      tickets.forEach((ticket: any) => ticketList.insert(ticket));
+
+      // Retorna os tickets ordenados como array
+      return ticketList.toArray();
     } catch (error) {
-      console.error("Erro no serviço:", error);
+      console.error("Erro ao carregar os tickets:", error);
       throw new Error("Erro ao carregar os tickets.");
     }
   }
