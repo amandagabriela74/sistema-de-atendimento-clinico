@@ -1,5 +1,12 @@
 import { FileService } from "./FileService";
 
+interface Ticket {
+  id: number;
+  type: string;
+  password: string;
+  createdAt: string;
+}
+
 export class TicketService {
   private static filePath = "src/data/tickets.json";
 
@@ -14,21 +21,29 @@ export class TicketService {
     }
   }
 
-  static async createTicket(type: string) {
+  static async createTicket(type: string): Promise<Ticket> {
     try {
-      const tickets = await FileService.readFile(this.filePath);
+      const tickets: Ticket[] = await FileService.readFile(this.filePath);
 
       const newId =
-        tickets.length > 0 ? Math.max(...tickets.map((t: any) => t.id)) + 1 : 1;
+        tickets.length > 0 ? Math.max(...tickets.map((t) => t.id)) + 1 : 1;
 
-      const newPassword: string = 'Senha'; //MUDAR DEPOIS
+      const newPassword = `N${String(newId).padStart(4, "0")}`;
 
-      const ticketToAdd = { id: newId, type, password: newPassword };
+      const createdAt = new Date().toLocaleString("pt-BR");
+
+      const ticketToAdd: Ticket = {
+        id: newId,
+        type,
+        password: newPassword,
+        createdAt,
+      };
+
       tickets.push(ticketToAdd);
 
       await FileService.writeFile(this.filePath, tickets);
 
-      return ticketToAdd; // Retorna o ticket criado
+      return ticketToAdd;
     } catch (error) {
       console.error("Erro ao criar o ticket:", error);
       throw new Error("Erro ao criar o ticket.");
