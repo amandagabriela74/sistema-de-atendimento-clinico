@@ -19,7 +19,7 @@ section {
   .card {
     padding: 1.5rem;
     border: 2px #5d00f2 solid;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
 
     h5 {
       font-size: 20px;
@@ -33,7 +33,7 @@ section {
   }
   .panel {
     border: 2px solid #5d00f2;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     width: 75%;
     height: 60vh;
     display: flex;
@@ -47,6 +47,7 @@ section {
 .panel-last {
   width: 35%;
   height: 60vh;
+  overflow-y: auto;
 
   ul {
     display: flex;
@@ -67,5 +68,22 @@ section {
       font-size: 30px;
       font-weight: 600;
     }
+  }
+}
+
+.card-panel-last {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h5 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: large;
   }
 }
