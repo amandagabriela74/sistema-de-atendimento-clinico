@@ -3,19 +3,37 @@ import { FileService } from "./FileService";
 export class TicketService {
   private static filePath = "src/data/tickets.json";
 
-  // Método para obter todos os tickets
-  static async getTickets() {
-    return await FileService.readFile(this.filePath);
-  }
-
   static async getAllTickets() {
     try {
-      const tickets = await FileService.readFile("src/data/tickets.json");
+      const tickets = await FileService.readFile(this.filePath);
       console.log("Tickets carregados:", tickets);
       return tickets;
     } catch (error) {
       console.error("Erro no serviço:", error);
       throw new Error("Erro ao carregar os tickets.");
+    }
+  }
+
+  static async createTicket(newTicket: {
+    senha: string;
+    guiche: number;
+    tipo: string;
+  }) {
+    try {
+      const tickets = await FileService.readFile(this.filePath);
+
+      const newId =
+        tickets.length > 0 ? Math.max(...tickets.map((t: any) => t.id)) + 1 : 1;
+
+      const ticketToAdd = { id: newId, ...newTicket };
+      tickets.push(ticketToAdd);
+
+      await FileService.writeFile(this.filePath, tickets);
+
+      return ticketToAdd; // Retorna o ticket criado
+    } catch (error) {
+      console.error("Erro ao criar o ticket:", error);
+      throw new Error("Erro ao criar o ticket.");
     }
   }
 }

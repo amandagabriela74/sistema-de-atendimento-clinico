@@ -8,7 +8,7 @@ export class FileService {
       return JSON.parse(data);
     } catch (error) {
       console.error(`Erro ao ler o arquivo ${filePath}:`, error);
-      return [];
+      throw new Error("Erro ao ler o arquivo.");
     }
   }
 
@@ -19,6 +19,7 @@ export class FileService {
       await fs.writeFile(filePath, data, "utf-8");
     } catch (error) {
       console.error(`Erro ao escrever no arquivo ${filePath}:`, error);
+      throw new Error("Erro ao salvar o arquivo.");
     }
   }
 }

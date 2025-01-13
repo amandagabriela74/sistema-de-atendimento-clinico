@@ -7,7 +7,8 @@ router.get("/", (req, res) => {
   res.send("Bem-vindo ao Clinic Attendance System!");
 });
 
-// Rota para listar os tickets
 router.get("/tickets", TicketController.getTickets);
+
+router.post("/tickets", TicketController.createTicket);
 
 export default router;
