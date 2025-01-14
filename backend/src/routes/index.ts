@@ -11,4 +11,6 @@ router.get("/tickets", TicketController.getTickets);
 
 router.post("/tickets", TicketController.createTicket);
 
+router.post("/tickets/next", TicketController.callNextTicket);
+
 export default router;

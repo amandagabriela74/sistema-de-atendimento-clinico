@@ -28,4 +28,27 @@ export class TicketController {
       res.status(500).json({ error: "Erro ao criar o ticket." });
     }
   }
+
+  static async callNextTicket(req: Request, res: Response): Promise<void> {
+    try {
+      const { guiche } = req.body;
+
+      if (!guiche) {
+        res.status(400).json({ error: "O número do guichê é obrigatório." });
+        return;
+      }
+
+      const nextTicket = await TicketService.callNextTicket(guiche);
+
+      if (!nextTicket) {
+        res.status(200).json({ message: "Nenhum ticket na fila." });
+        return;
+      }
+
+      res.status(200).json(nextTicket);
+    } catch (error) {
+      console.error("Erro ao chamar o próximo ticket:", error);
+      res.status(500).json({ error: "Erro ao chamar o próximo ticket." });
+    }
+  }
 }
