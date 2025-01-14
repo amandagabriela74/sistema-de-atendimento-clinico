@@ -1,25 +1,26 @@
 <div class="fill-space"></div>
 <nav class="navbar">
   <div class="links-container">
-    <div class="logo-container" >
-   <!--    <img alt="logo" /> -->
+    <div class="logo-container">
+      <!--    <img alt="logo" /> -->
       <h1 style="color: white;">LOGO</h1>
     </div>
     <div class="nav-items">
-        <ul>
-          <li class="list"> menu </li>
-            <li class="list"> menu </li>
-          <li >
-            <div class="user">
-              <p>Amanda - Médica </p>
-              <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M10.1784 8.76098C9.72689 9.09755 9.13807 9.09843 8.68559 8.7632L0.603194 2.77522C-0.0157827 2.31662 -0.18429 1.38556 0.226835 0.695654C0.638096 0.00574686 1.47329 -0.181751 2.09227 0.276854L9.42744 5.71124L16.7464 0.255048C17.3641 -0.205396 18.1998 -0.020385 18.613 0.668296C19.0263 1.35698 18.8606 2.28853 18.2429 2.74897L10.1784 8.76098Z"
-                  fill="#E74523" />
-              </svg>
-            </div>
-          </li>
-        </ul>
+      <ul>
+        <li class="list">
+          <div [routerLink]="['/pacientes']" routerLinkActive="router-link-active">Paciente</div>
+        </li>
+        <li>
+          <div class="user">
+            <p>Amanda - Médica </p>
+            <svg width="19" height="10" viewBox="0 0 19 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10.1784 8.76098C9.72689 9.09755 9.13807 9.09843 8.68559 8.7632L0.603194 2.77522C-0.0157827 2.31662 -0.18429 1.38556 0.226835 0.695654C0.638096 0.00574686 1.47329 -0.181751 2.09227 0.276854L9.42744 5.71124L16.7464 0.255048C17.3641 -0.205396 18.1998 -0.020385 18.613 0.668296C19.0263 1.35698 18.8606 2.28853 18.2429 2.74897L10.1784 8.76098Z"
+                fill="#E74523" />
+            </svg>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
