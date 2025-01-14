@@ -17,4 +17,9 @@ export class TicketsService {
   Post(request: any): Observable<any> {
     return this.http.post<any>(this.url + 'tickets', request);
   }
+
+  // Método para chamar o próximo ticket
+  callNextTicket(request: { guiche: number }): Observable<any> {
+    return this.http.post<any>(this.url + 'tickets/next', request);
+  }
 }
