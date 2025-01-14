@@ -17,7 +17,7 @@
         </button>
       </li>
       <li>
-        <button role="tab" [attr.aria-selected]="selectedTab === ''">
+        <button role="tab" [attr.aria-selected]="selectedTab === 'position-medical'" (click)="selectTab('position-medical')">
           Atendimento Médico
         </button>
       </li>
@@ -31,3 +31,7 @@
 @if (selectedTab === 'position-guiche') {
 <app-guiche-panel></app-guiche-panel>
 }
+@if (selectedTab === 'position-medical') {
+  <app-medical-panel></app-medical-panel>
+  }
+
