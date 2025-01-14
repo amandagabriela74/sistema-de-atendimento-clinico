@@ -25,21 +25,4 @@ export class GuichePanelComponent implements OnInit {
     });
   }
 
-  chamarProximo(guiche: any) {
-    const guicheNumber = Number(guiche); // Converte para número
-    if (isNaN(guicheNumber)) {
-      console.error('O valor do guichê precisa ser um número válido.');
-      return;
-    }
-
-    this.ticketsService.callNextTicket({ guiche }).subscribe({
-      next: (response) => {
-        console.log('Próximo ticket:', response);
-        // Aqui você pode atualizar o painel de atendimento ou exibir uma mensagem
-      },
-      error: (err) => {
-        console.error('Erro ao chamar o próximo ticket:', err);
-      },
-    });
-  }
 }

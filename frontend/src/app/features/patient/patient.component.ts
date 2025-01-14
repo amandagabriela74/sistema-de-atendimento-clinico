@@ -2,27 +2,39 @@ import { Component } from '@angular/core';
 import { GenerateTicketComponent } from '../../shared/components/generate-ticket/generate-ticket.component';
 import { GuichePanelComponent } from '../../shared/components/guiche-panel/guiche-panel.component';
 import { MedicalPanelComponent } from '../../shared/components/medical-panel/medical-panel.component';
+import { HeaderComponent } from '../../core/components/header/header.component';
 
 @Component({
   selector: 'app-patient',
   standalone: true,
-  imports: [GenerateTicketComponent, GuichePanelComponent, MedicalPanelComponent],
+  imports: [
+    GenerateTicketComponent,
+    GuichePanelComponent,
+    MedicalPanelComponent,
+    HeaderComponent,
+  ],
   templateUrl: './patient.component.html',
   styleUrl: './patient.component.scss',
 })
 export class PatientComponent {
   selectedTab: string = 'ticket';
   subTitle: string = '';
+  tabs: any = [
+    { label: 'Puxar Ticket', value: 'ticket' },
+    { label: 'Atendimento Guiche', value: 'position-guiche' },
+    { label: 'Atendimento Médico', value: 'position-medical' },
+  ];
 
-  selectTab(tab: string) {
+  onTabSelected(tab: string) {
     this.selectedTab = tab;
-    if(tab === 'position-guiche'){
-      this.subTitle = ' | Painel de Atendimento - Guichê'
+    if (tab === 'ticket') {
+      this.subTitle = '';
     }
-    if(tab === 'position-medical'){
-      this.subTitle = ' | Painel de Atendimento - Médico'
+    if (tab === 'position-guiche') {
+      this.subTitle = ' | Painel de Atendimento - Guichê';
+    }
+    if (tab === 'position-medical') {
+      this.subTitle = ' | Painel de Atendimento - Médico';
     }
   }
-
-
 }

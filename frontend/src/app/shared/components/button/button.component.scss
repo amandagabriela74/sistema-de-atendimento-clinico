@@ -1,0 +1,26 @@
+button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #5d00f2;
+  color: #ffffff;
+  border: 1px solid #e3e3e3;
+  padding: 8px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 2rem;
+  min-height: 40px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+
+  &:hover {
+    background-color: rgba(100, 180, 255, 0.2);
+    color: #5d00f2;
+    border-color: #5d00f2;
+  }
+}

@@ -1,0 +1,17 @@
+app-button {
+  position: fixed;
+  top: 6.5rem;
+  right: 2%;
+  margin: 0 auto;
+  z-index: 10;
+  animation: moveRight 1s;
+}
+
+@keyframes moveRight {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 2%;
+  }
+}

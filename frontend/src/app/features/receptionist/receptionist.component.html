@@ -1,0 +1,13 @@
+<app-header [title]="'Recepcionistas'" [subTitle]="'| Painel de Atendimento - Guichê'" [tabs]="tabs"
+  [selectedTab]="selectedTab"></app-header>
+
+<app-button [title]="'Chamar Próximo'"></app-button>
+
+<app-guiche-panel></app-guiche-panel>
+
+<div>
+  <label for="guiche">Número do Guichê:</label>
+  <input type="number" id="guiche" #guicheInput />
+
+  <button (click)="chamarProximo(guicheInput.value)">Chamar Próximo</button>
+</div>

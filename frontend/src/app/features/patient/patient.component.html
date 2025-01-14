@@ -1,29 +1,6 @@
-<header>
-  <div class="header-title">
-    <h1> Pacientes </h1>
-    <h3> {{subTitle}} </h3>
-  </div>
+<app-header [title]="'Pacientes'" [subTitle]="subTitle" [tabs]="tabs" [selectedTab]="selectedTab"
+  (tabSelected)="onTabSelected($event)"></app-header>
 
-  <nav aria-label="Tipo de Indicadores">
-    <ul class="tabs" role="tablist">
-      <li>
-        <button role="tab" [attr.aria-selected]="selectedTab === 'ticket'" (click)="selectTab('ticket')">
-          Puxar Ticket
-        </button>
-      </li>
-      <li>
-        <button role="tab" [attr.aria-selected]="selectedTab === 'position-guiche'" (click)="selectTab('position-guiche')">
-          Atendimento Guiche
-        </button>
-      </li>
-      <li>
-        <button role="tab" [attr.aria-selected]="selectedTab === 'position-medical'" (click)="selectTab('position-medical')">
-          Atendimento Médico
-        </button>
-      </li>
-    </ul>
-  </nav>
-</header>
 
 @if (selectedTab === 'ticket') {
 <app-generate-ticket></app-generate-ticket>
@@ -32,6 +9,5 @@
 <app-guiche-panel></app-guiche-panel>
 }
 @if (selectedTab === 'position-medical') {
-  <app-medical-panel></app-medical-panel>
-  }
-
+<app-medical-panel></app-medical-panel>
+}

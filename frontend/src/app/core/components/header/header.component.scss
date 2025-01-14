@@ -2,113 +2,82 @@
 * {
   margin: 0;
 }
-
-.fill-space {
-  width: 100%;
-}
-
-.navbar {
-  height: 3.5rem;
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #121212;
-  z-index: 10;
-  padding: 0 6rem;
+  width: 100%;
+  background-color: rgb(255 255 255 / 50%);
+  border-bottom: 1px solid #ebebeb;
+  flex-direction: column;
+  padding: 20px 40px 0px 40px;
 
-  .links-container {
+  .header-title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.5rem;
     width: 100%;
 
-    .logo-container {
-      width: fit-content;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      font-size: 14px;
+    h1 {
+      font-size: 30px;
+      color: #505050;
     }
 
-    .user {
-      color: #fafafa;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
-      gap: 0.5rem;
-      cursor: pointer;
-    }
-
-    .user:hover {
-      color: #e74523;
+    h3 {
+      color: #505050;
     }
   }
-}
 
-.nav-items {
-  ul {
-    font-size: 14px;
+  .header-actions {
+    position: relative;
+    top: -5px;
     display: flex;
-    color: white;
-    flex-direction: row;
-    gap: 1.6rem;
-    list-style-type: none;
-  }
+    align-items: center;
+    gap: 1rem;
 
-  .list {
-    cursor: pointer;
-  }
-
-  .list:hover {
-    color: #e74523;
-    transform: scale(1.1);
+    select {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
   }
 }
 
-.list-of-links {
-  display: flex;
-  color: #fafafa !important;
-  padding: 0;
-  margin: 0;
-  z-index: 10;
-}
+// Estilos da navegação de Tabs
+nav {
+  width: 100%;
+  .tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin-bottom: -1px;
+    justify-content: center;
 
-.homologation-banner {
-  color: red;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-}
+    li {
+      margin-right: 20px;
+      list-style: none;
+    }
 
-@media screen and (max-width: 1360px) {
-  .navbar{
-    padding: 0 3rem;
-  }
-}
+    .header-actions-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+    }
 
-@media screen and (max-width: 800px) {
-  .navbar{
-    .links-container{
-      .logo-container{
-        display: none;
+    button[role="tab"] {
+      background: none;
+      border: none;
+      font-size: 16px;
+      padding: 10px;
+      cursor: pointer;
+      color: #666;
+      border-bottom: 2px solid transparent;
+
+      &:hover,
+      &[aria-selected="true"] {
+        color: #5d00f2;
+        border-bottom-color: #5d00f2;
       }
     }
   }
-
 }
-
-@media screen and (max-width: 650px) {
-  .navbar{
-    padding: 0 1.5rem;
-  }
-
-  .nav-items {
-    ul {
-      font-size: 12px;
-      gap: .8rem;
-    }
-  }
-
-}
-
