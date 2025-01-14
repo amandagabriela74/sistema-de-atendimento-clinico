@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TicketsService } from '../../core/services/tickets.service';
+import { TicketsService } from '../../services/tickets.service';
 
 @Component({
   selector: 'app-generate-ticket',
