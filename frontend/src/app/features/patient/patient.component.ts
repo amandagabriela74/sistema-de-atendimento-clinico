@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { GenerateTicketComponent } from '../../core/components/generate-ticket/generate-ticket.component';
-import { GuichePanelComponent } from '../../core/components/guiche-panel/guiche-panel.component';
+import { GenerateTicketComponent } from '../../shared/components/generate-ticket/generate-ticket.component';
+import { GuichePanelComponent } from '../../shared/components/guiche-panel/guiche-panel.component';
 
 @Component({
   selector: 'app-patient',
