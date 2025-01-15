@@ -1,0 +1,7 @@
+@if(isOpen){
+<div class="modal-backdrop" (click)="closeModal()"></div>
+<div class="modal-content"  [ngStyle]="{ width: width }">
+  <button class="close-button" (click)="closeModal()">X</button>
+  <ng-content></ng-content>
+</div>
+}

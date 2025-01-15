@@ -1,4 +1,4 @@
-app-button {
+.button {
   position: fixed;
   top: 6.5rem;
   right: 2%;
@@ -14,4 +14,8 @@ app-button {
   100% {
     right: 2%;
   }
+}
+
+app-overlay-modal{
+  width: 60%;
 }
