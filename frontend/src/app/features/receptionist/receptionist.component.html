@@ -6,12 +6,17 @@
 <app-guiche-panel></app-guiche-panel>
 
 <app-overlay-modal [isOpen]="openModal()">
-  <h2>Modal Title</h2>
-  <p>Modal Content Here...</p>
   <div>
-    <label for="guiche">Número do Guichê:</label>
-    <input type="number" id="guiche" #guicheInput />
-
-    <app-button [title]="'Chamar Próximo'" (click)="chamarProximo(guicheInput.value)">Chamar Próximo</app-button>
+    <h2>Chamar próximo ticket</h2>
+    <p>Escolha o seu guichê:</p>
+    <div>
+      <label for="guiche">Número do Guichê:</label>
+      <input type="number" id="guiche" #guicheInput />
+      <app-button
+        [title]="'Chamar Próximo'"
+        (click)="chamarProximo(guicheInput.value)">
+        Chamar Próximo
+      </app-button>
+    </div>
   </div>
 </app-overlay-modal>
