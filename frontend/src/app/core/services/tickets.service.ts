@@ -10,7 +10,7 @@ export class TicketsService {
   private http = inject(HttpClient);
   private url: string = environment.URL + '';
 
-  Get(): Observable<any> {
+/*   Get(): Observable<any> {
     return this.http.get<any>(this.url + 'tickets');
   }
 
@@ -21,5 +21,5 @@ export class TicketsService {
   // Método para chamar o próximo ticket
   callNextTicket(request: { guiche: number }): Observable<any> {
     return this.http.post<any>(this.url + 'tickets/next', request);
-  }
+  } */
 }

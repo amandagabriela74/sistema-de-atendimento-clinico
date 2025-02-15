@@ -23,7 +23,7 @@ export class ReceptionistComponent {
   openModalNextTicket() {
     this.openModal.update((current) => !current);
   }
-  chamarProximo(guiche: any) {
+/*   chamarProximo(guiche: any) {
     const guicheNumber = Number(guiche); // Converte para número
     if (isNaN(guicheNumber)) {
       console.error('O valor do guichê precisa ser um número válido.');
@@ -39,5 +39,33 @@ export class ReceptionistComponent {
         console.error('Erro ao chamar o próximo ticket:', err);
       },
     });
-  }
+  } */
+
+    chamarProximo(guiche: any): void {
+      const guicheNumber = Number(guiche);
+      if (isNaN(guicheNumber)) {
+        console.error('O valor do guichê precisa ser um número válido.');
+        return;
+      }
+    
+      // Recupera os tickets do localStorage
+      const storedTickets = localStorage.getItem('tickets');
+      let tickets = storedTickets ? JSON.parse(storedTickets) : [];
+    
+      if (tickets.length === 0) {
+        console.log('Nenhum ticket na fila.');
+        return;
+      }
+    
+      // Pega e remove o primeiro ticket da fila
+      const nextTicket = tickets.shift();
+      nextTicket.guiche = guicheNumber; // Adiciona o guichê ao ticket chamado
+    
+      // Atualiza a lista no localStorage
+      localStorage.setItem('tickets', JSON.stringify(tickets));
+    
+      // Atualiza a interface com o ticket chamado
+      console.log(`Chamado ticket ${nextTicket.password} para o guichê ${guicheNumber}`);
+    }
+    
 }

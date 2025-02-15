@@ -14,7 +14,7 @@ export class GuichePanelComponent implements OnInit {
   private ticketsService = inject(TicketsService);
 
   ngOnInit(): void {
-    this.ticketsService.Get().subscribe({
+/*     this.ticketsService.Get().subscribe({
       next: (response) => {
         console.log('Resposta da API:', response);
         this.tickets = response;
@@ -22,7 +22,14 @@ export class GuichePanelComponent implements OnInit {
       error: (err) => {
         console.error('Erro ao chamar a API:', err);
       },
-    });
+    }); */
+
+    const storedTickets = localStorage.getItem('tickets');
+    this.tickets = storedTickets ? JSON.parse(storedTickets) : [
+      { type: 'Prioridade', password: 'A123', guiche: 1 },
+      { type: 'Normal', password: 'B456', guiche: 2 },
+      { type: 'Urgência', password: 'C789', guiche: 3 },
+    ];
   }
 
 }
