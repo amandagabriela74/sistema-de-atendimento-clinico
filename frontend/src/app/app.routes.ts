@@ -6,16 +6,8 @@ import { ReceptionistComponent } from './features/receptionist/receptionist.comp
 
 export const routes: Routes = [
   {
-    component: GenerateTicketComponent,
-    path: 'gerar-ticket'
-  },
-  {
-    component: GuichePanelComponent,
-    path: 'painel-guiche'
-  },
-  {
-    component: PatientComponent,
-    path: 'pacientes'
+    path: 'pacientes',
+    loadComponent: () => import('./features/patient/patient.component').then( mod => mod.PatientComponent)
   },
   {
     path: 'recepcionistas',

@@ -20,8 +20,6 @@ export class HeaderComponent {
   profiles = [
     { label: 'Paciente', value: 'pacientes' },
     { label: 'Recepcionista', value: 'recepcionistas' },
-    { label: 'Médico', value: 'medicos' },
-    { label: 'Admin', value: 'admin' },
   ];
   selectedProfile: string = 'pacientes';
 
@@ -33,6 +31,5 @@ export class HeaderComponent {
     const selectedValue = (event.target as HTMLSelectElement).value;
     this.selectedProfile = selectedValue;
     this.router.navigate(['/', selectedValue]);
-    console.log(`Navegando para: /${selectedValue}`);
   }
 }
