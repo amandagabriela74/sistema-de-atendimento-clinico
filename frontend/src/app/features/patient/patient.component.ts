@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { GenerateTicketComponent } from '../../shared/components/generate-ticket/generate-ticket.component';
 import { GuichePanelComponent } from '../../shared/components/guiche-panel/guiche-panel.component';
-import { MedicalPanelComponent } from '../../shared/components/medical-panel/medical-panel.component';
 import { HeaderComponent } from '../../core/components/header/header.component';
 
 @Component({
@@ -10,7 +9,6 @@ import { HeaderComponent } from '../../core/components/header/header.component';
   imports: [
     GenerateTicketComponent,
     GuichePanelComponent,
-    MedicalPanelComponent,
     HeaderComponent,
   ],
   templateUrl: './patient.component.html',
