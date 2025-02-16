@@ -1,0 +1,15 @@
+<section class="lista-espera">
+  <h2>Lista de Espera</h2>
+
+  <ul>
+    @for (ticket of listaEspera; track $index) {
+    <li>
+      <span class="senha">{{ ticket.password }}</span>
+      <span class="tipo">{{ ticket.type }}</span>
+      <button (click)="chamarProximoPaciente(1)">Chamar</button>
+    </li>
+    } @empty {
+    <p class="empty">Nenhum paciente na lista de espera.</p>
+    }
+  </ul>
+</section>

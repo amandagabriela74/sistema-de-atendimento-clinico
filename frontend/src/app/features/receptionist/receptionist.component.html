@@ -1,9 +1,15 @@
 <app-header [title]="'Recepcionistas'" [subTitle]="'| Painel de Atendimento - Guichê'" [tabs]="tabs"
-  [selectedTab]="selectedTab"></app-header>
+  [selectedTab]="selectedTab" (tabSelected)="onTabSelected($event)"></app-header>
 
 <app-button [title]="'Chamar Próximo Ticket'" class="button" (click)="openModalNextTicket()"></app-button>
 
-<app-guiche-panel></app-guiche-panel>
+@if (selectedTab === 'position-guiche') {
+  <app-guiche-panel></app-guiche-panel>
+  }
+
+@if (selectedTab === 'position-waiting') {
+  <app-waiting-list></app-waiting-list>
+}
 
 <app-overlay-modal [isOpen]="openModal()">
   <div>
