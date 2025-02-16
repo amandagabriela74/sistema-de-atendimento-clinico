@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TicketsService } from '../../../core/services/tickets.service';
 
 @Component({
   selector: 'app-guiche-panel',
@@ -10,8 +9,6 @@ import { TicketsService } from '../../../core/services/tickets.service';
 })
 export class GuichePanelComponent implements OnInit {
   tickets: any = [];
-
-  private ticketsService = inject(TicketsService);
 
   ngOnInit(): void {
 /*     this.ticketsService.Get().subscribe({
@@ -30,6 +27,13 @@ export class GuichePanelComponent implements OnInit {
       { type: 'Normal', password: 'B456', guiche: 2 },
       { type: 'Urgência', password: 'C789', guiche: 3 },
     ];
+
+/*     const storedTickets = localStorage.getItem('tickets');
+const allTickets = storedTickets ? JSON.parse(storedTickets) : [];
+
+// Filtra apenas os tickets que já foram chamados (possuem guichê)
+this.tickets = allTickets.filter((ticket: { guiche: any; }) => ticket.guiche);
+ */
   }
 
 }

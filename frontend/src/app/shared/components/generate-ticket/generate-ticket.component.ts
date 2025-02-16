@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TicketsService } from '../../../core/services/tickets.service';
 
 @Component({
   selector: 'app-generate-ticket',
@@ -12,8 +11,6 @@ export class GenerateTicketComponent implements OnInit {
  /*  public generatedTicket: { password: string; type: string } | null = null; */
 
  public generatedTicket: any;
-
-  private ticketsService = inject(TicketsService);
 
   ngOnInit(): void {}
 
