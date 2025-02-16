@@ -20,7 +20,6 @@ export class PatientComponent {
   tabs: any = [
     { label: 'Puxar Ticket', value: 'ticket' },
     { label: 'Atendimento Guiche', value: 'position-guiche' },
-    { label: 'Atendimento Médico', value: 'position-medical' },
   ];
 
   onTabSelected(tab: string) {
@@ -30,9 +29,6 @@ export class PatientComponent {
     }
     if (tab === 'position-guiche') {
       this.subTitle = ' | Painel de Atendimento - Guichê';
-    }
-    if (tab === 'position-medical') {
-      this.subTitle = ' | Painel de Atendimento - Médico';
     }
   }
 }

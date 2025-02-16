@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-generate-ticket',
@@ -8,27 +8,10 @@ import { Component, inject, OnInit } from '@angular/core';
   styleUrl: './generate-ticket.component.scss',
 })
 export class GenerateTicketComponent implements OnInit {
- /*  public generatedTicket: { password: string; type: string } | null = null; */
 
  public generatedTicket: any;
 
   ngOnInit(): void {}
-
-/*   createTicket(type: string): void {
-    const ticketData = { type };
-
-    this.ticketsService.Post(ticketData).subscribe({
-      next: (response) => {
-        this.generatedTicket = response;
-        console.log('Ticket gerado com sucesso:', response);
-      },
-      error: (error) => {
-        console.error('Erro ao gerar ticket:', error);
-        alert('Erro ao gerar ticket! Tente novamente.');
-      },
-    });
-  } */
-
     createTicket(type: string): void {
       // Recupera os tickets já salvos ou inicializa um array vazio
       const storedTickets = localStorage.getItem('tickets');

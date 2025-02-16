@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { HeaderComponent } from '../../core/components/header/header.component';
 import { GuichePanelComponent } from '../../shared/components/guiche-panel/guiche-panel.component';
 import { ButtonComponent } from "../../shared/components/button/button.component";
@@ -20,23 +20,6 @@ export class ReceptionistComponent {
   openModalNextTicket() {
     this.openModal.update((current) => !current);
   }
-/*   chamarProximo(guiche: any) {
-    const guicheNumber = Number(guiche); // Converte para número
-    if (isNaN(guicheNumber)) {
-      console.error('O valor do guichê precisa ser um número válido.');
-      return;
-    }
-
-    this.ticketsService.callNextTicket({ guiche }).subscribe({
-      next: (response) => {
-        console.log('Próximo ticket:', response);
-        // Aqui você pode atualizar o painel de atendimento ou exibir uma mensagem
-      },
-      error: (err) => {
-        console.error('Erro ao chamar o próximo ticket:', err);
-      },
-    });
-  } */
 
     chamarProximo(guiche: any): void {
       const guicheNumber = Number(guiche);
