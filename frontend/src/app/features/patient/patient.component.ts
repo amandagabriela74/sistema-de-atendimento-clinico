@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GenerateTicketComponent } from '../../shared/components/generate-ticket/generate-ticket.component';
+import { GenerateTicketComponent } from './components/generate-ticket/generate-ticket.component';
 import { GuichePanelComponent } from '../../shared/components/guiche-panel/guiche-panel.component';
 import { HeaderComponent } from '../../core/components/header/header.component';
 
