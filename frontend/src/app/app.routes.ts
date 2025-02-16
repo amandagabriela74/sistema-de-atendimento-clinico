@@ -8,5 +8,7 @@ export const routes: Routes = [
   {
     path: 'recepcionistas',
     loadComponent: () => import('./features/receptionist/receptionist.component').then( mod => mod.ReceptionistComponent)
-  }
+  },
+  { path: '',   redirectTo: '/pacientes', pathMatch: 'full' },
+  //{ path: '**', component: PageNotFoundComponent },
 ];
