@@ -1,31 +1,36 @@
 <section>
-  <article class="panel">
-    <h4>Atendimento {{tickets[0].type}}</h4>
-    <div style="width: 100%; display: flex; flex-direction: column; gap: 1rem;">
-      <div class="card">
-        <h5>Senha</h5>
-        <h3> {{tickets[0].password}}</h3>
-      </div>
-      <div class="card">
-        <h5>Guichê</h5>
-        <h3> {{tickets[0].guiche}}</h3>
-      </div>
-    </div>
-  </article>
-  <article class="panel-last">
-    <h5>Últimas chamadas</h5>
-    <ul>
-      @for (ticket of tickets; track $index) {
-      <li style="display: flex;justify-content: space-between; align-items: center;">
-        <div class="card-panel-last">
-          <h5>{{ticket.password}}</h5>
-          <h3> Senha</h3>
+  @if (tickets && tickets.length > 0) {
+    <article class="panel">
+      <h4>Atendimento {{tickets[0].type}}</h4>
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 1rem;">
+        <div class="card">
+          <h5>Senha</h5>
+          <h3> {{tickets[0].password}}</h3>
         </div>
-        <div class="card-panel-last">
-          <h2> Guichê {{ticket.guiche}}</h2>
+        <div class="card">
+          <h5>Guichê</h5>
+          <h3> {{tickets[0].guiche}}</h3>
         </div>
-      </li>
-      }
-    </ul>
-  </article>
+      </div>
+    </article>
+    <article class="panel-last">
+      <h5>Últimas chamadas</h5>
+      <ul>
+        @for (ticket of tickets; track $index) {
+        <li style="display: flex;justify-content: space-between; align-items: center;">
+          <div class="card-panel-last">
+            <h5>{{ticket.password}}</h5>
+            <h3> Senha</h3>
+          </div>
+          <div class="card-panel-last">
+            <h2> Guichê {{ticket.guiche}}</h2>
+          </div>
+        </li>
+        }
+      </ul>
+    </article>
+  }
+  @else {
+    Ainda não há pacientes na fila. Se precisar de atendimento, retire sua senha.
+  }
 </section>
