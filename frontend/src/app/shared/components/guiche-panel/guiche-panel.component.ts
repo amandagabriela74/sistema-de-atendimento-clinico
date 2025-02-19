@@ -12,11 +12,8 @@ export class GuichePanelComponent implements OnInit {
 
   ngOnInit(): void {
     const storedTickets = localStorage.getItem('tickets');
-    this.tickets = storedTickets ? JSON.parse(storedTickets) : [
-      { type: 'Prioridade', password: 'A123', guiche: 1 },
-      { type: 'Normal', password: 'B456', guiche: 2 },
-      { type: 'Urgência', password: 'C789', guiche: 3 },
-    ];
+    if(storedTickets){
+      this.tickets = JSON.parse(storedTickets).filter((ticket: any) => ticket.guiche);
+    }
   }
-
 }
